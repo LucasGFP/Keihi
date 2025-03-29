@@ -1,0 +1,48 @@
+body {
+  background-color: #f8f9fa;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.card {
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card-header {
+  font-weight: 600;
+}
+
+.table th {
+  white-space: nowrap;
+}
+
+/* Estilo para o gráfico */
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .chart-container {
+    height: 250px;
+  }
+}
+
+/* Cores para entradas e saídas */
+.text-success {
+  color: #28a745 !important;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+/* Botão de excluir */
+.btn-excluir {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
