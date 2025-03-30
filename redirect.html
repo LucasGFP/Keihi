@@ -1,14 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Redirecionando...</title>
-    <meta http-equiv="refresh" content="0;url=login.html" />
-    <script>
-        // Redirecionamento garantido por JavaScript também
-        window.location.href = "login.html";
-    </script>
+    <meta charset="UTF-8">
+    <title>Redirecionando para KeihiExpenses...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="2;url=login.html" />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+        .spinner {
+            margin: 20px auto;
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--border);
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-    <p>Se você não for redirecionado automaticamente, <a href="login.html">clique aqui</a>.</p>
+    <div class="spinner"></div>
+    <h1>Redirecionando...</h1>
+    <p>Você será direcionado para a página de login em instantes.</p>
+    <p>Se o redirecionamento não ocorrer automaticamente, <a href="login.html">clique aqui</a>.</p>
+    
+    <script>
+        window.location.href = "login.html";
+    </script>
 </body>
 </html>

@@ -1,64 +1,173 @@
-/* Adicione ao final do arquivo styles.css */
-
-/* Estilos para as páginas de login e cadastro */
-.min-vh-100 {
-  min-height: 100vh;
+:root {
+  --primary-color: #4dabf7;
+  --primary-hover: #339af0;
+  --primary-shadow: rgba(77, 171, 247, 0.25);
+  --border-radius: 10px;
+  
+  /* Cores do tema escuro (fixo) */
+  --bg: #121212;
+  --card: #1e1e1e;
+  --text: #e9ecef;
+  --text-muted: #adb5bd;
+  --border: #2e2e2e;
 }
 
+/* Estilos base */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Layout */
+.container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: var(--bg);
+}
+
+/* Cards */
 .card {
-  border-radius: 10px;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  color: var(--text);
 }
 
 .card-header {
-  border-radius: 10px 10px 0 0 !important;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
 }
 
-.form-control:focus {
-  border-color: #28a745;
-  box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+/* Formulários */
+.form-control, .form-select {
+  background-color: #25262b;
+  border-color: var(--border);
+  color: var(--text);
 }
 
-a {
-  color: #28a745;
-  text-decoration: none;
+.form-control:focus, .form-select:focus {
+  background-color: #25262b;
+  color: var(--text);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem var(--primary-shadow);
 }
 
-a:hover {
-  color: #218838;
-  text-decoration: underline;
+/* Tabelas */
+.table {
+  color: var(--text);
+  background-color: var(--card);
 }
 
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Botões */
 .btn-primary {
-  background-color: #28a745;
-  border-color: #28a745;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .btn-primary:hover {
-  background-color: #218838;
-  border-color: #1e7e34;
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
 }
 
-.btn-success {
-  background-color: #28a745;
-  border-color: #28a745;
-}
-
-.btn-success:hover {
-  background-color: #218838;
-  border-color: #1e7e34;
-}
-/* Ajuste o container do gráfico */
+/* Gráfico */
 .chart-container {
-  position: relative;
-  height: 250px;  /* Reduzido de 300px */
-  width: 100%;
-  margin: 0 auto;
-  max-width: 500px;  /* Limita a largura máxima */
+  background-color: var(--card);
+  border: 1px solid var(--border);
 }
 
-/* Ajuste para telas menores */
+/* Textos */
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
 @media (max-width: 768px) {
-  .chart-container {
-      height: 200px;  /* Reduzido de 250px */
+  .container {
+    padding: 1rem;
   }
+}
+
+body {
+  background-color: #121212 !important;
+}
+
+.container, .container-fluid {
+  background-color: #121212 !important;
+}
+
+.card {
+  background-color: #1e1e1e !important;
+  border-color: #333 !important;
+}
+
+.table {
+  background-color: #1e1e1e !important;
+  color: #e9ecef !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.form-control, .form-select {
+  background-color: #25262b !important;
+  border-color: #333 !important;
+  color: #e9ecef !important;
+}
+
+.border-success, .border-danger, .border-primary {
+  border-color: #333 !important;
+}
+
+/* CORREÇÕES ESPECÍFICAS PARA LOGIN/CADASTRO */
+.card {
+  border: 1px solid #333 !important; /* Borda escura */
+}
+
+.form-text, .text-muted {
+  color: #adb5bd !important; /* Cor cinza claro para textos auxiliares */
+}
+
+.text-center p {
+  color: #e9ecef !important; /* Cor dos links "Já tem uma conta?" */
+}
+
+a {
+  color: #4dabf7 !important; /* Cor dos links */
+}
+
+a:hover {
+  color: #339af0 !important;
+}
+
+/* Correção para os placeholders */
+::placeholder {
+  color: #6c757d !important;
+  opacity: 1;
+}
+
+/* CORREÇÃO DE EMERGÊNCIA */
+.login-container, .cadastro-container, 
+.card-body, .card-header, 
+.form-control, .form-label,
+small, .text-muted {
+  color: #e9ecef !important;
+  border-color: #333 !important;
+}
+
+/* Garante que os placeholders ficarão visíveis */
+.form-control::placeholder {
+  color: #6c757d !important;
+  opacity: 1;
+}
+
+/* Remove o glow branco do focus */
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
