@@ -1,48 +1,64 @@
-body {
-  background-color: #f8f9fa;
-  padding-top: 20px;
-  padding-bottom: 20px;
+/* Adicione ao final do arquivo styles.css */
+
+/* Estilos para as páginas de login e cadastro */
+.min-vh-100 {
+  min-height: 100vh;
 }
 
 .card {
-  margin-bottom: 20px;
-  border: none;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border-radius: 10px;
 }
 
 .card-header {
-  font-weight: 600;
+  border-radius: 10px 10px 0 0 !important;
 }
 
-.table th {
-  white-space: nowrap;
+.form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
 }
 
-/* Estilo para o gráfico */
+a {
+  color: #28a745;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #218838;
+  text-decoration: underline;
+}
+
+.btn-primary {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-primary:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+/* Ajuste o container do gráfico */
 .chart-container {
   position: relative;
-  height: 300px;
+  height: 250px;  /* Reduzido de 300px */
   width: 100%;
+  margin: 0 auto;
+  max-width: 500px;  /* Limita a largura máxima */
 }
 
-/* Responsividade */
+/* Ajuste para telas menores */
 @media (max-width: 768px) {
   .chart-container {
-    height: 250px;
+      height: 200px;  /* Reduzido de 250px */
   }
-}
-
-/* Cores para entradas e saídas */
-.text-success {
-  color: #28a745 !important;
-}
-
-.text-danger {
-  color: #dc3545 !important;
-}
-
-/* Botão de excluir */
-.btn-excluir {
-  padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
 }
