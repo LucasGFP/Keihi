@@ -3,8 +3,7 @@
   --primary-hover: #339af0;
   --primary-shadow: rgba(77, 171, 247, 0.25);
   --border-radius: 10px;
-  
-  /* Cores do tema escuro (fixo) */
+
   --bg: #121212;
   --card: #1e1e1e;
   --text: #e9ecef;
@@ -12,15 +11,20 @@
   --border: #2e2e2e;
 }
 
-/* Estilos base */
+/* Reset e fundo geral */
+html,
 body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
   background-color: var(--bg);
   color: var(--text);
-  min-height: 100vh;
+  overflow-x: hidden;
   transition: all 0.3s ease;
 }
 
-/* Layout */
+/* Container padrão */
 .container {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -42,13 +46,15 @@ body {
 }
 
 /* Formulários */
-.form-control, .form-select {
+.form-control,
+.form-select {
   background-color: #25262b;
   border-color: var(--border);
   color: var(--text);
 }
 
-.form-control:focus, .form-select:focus {
+.form-control:focus,
+.form-select:focus {
   background-color: #25262b;
   color: var(--text);
   border-color: var(--primary-color);
@@ -93,81 +99,63 @@ body {
   }
 }
 
-body {
-  background-color: #121212 !important;
+/* Login page */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg);
+  min-height: 100vh;
+  padding: 1rem;
+  margin: 0;
 }
 
-.container, .container-fluid {
-  background-color: #121212 !important;
+.login-page .card {
+  max-width: 400px;
+  width: 100%;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  color: var(--text);
 }
 
-.card {
-  background-color: #1e1e1e !important;
+/* Cores das bordas */
+.border-success,
+.border-danger,
+.border-primary {
   border-color: #333 !important;
 }
 
-.table {
-  background-color: #1e1e1e !important;
-  color: #e9ecef !important;
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(255, 255, 255, 0.05) !important;
-}
-
-.form-control, .form-select {
-  background-color: #25262b !important;
-  border-color: #333 !important;
-  color: #e9ecef !important;
-}
-
-.border-success, .border-danger, .border-primary {
-  border-color: #333 !important;
-}
-
-/* CORREÇÕES ESPECÍFICAS PARA LOGIN/CADASTRO */
-.card {
-  border: 1px solid #333 !important; /* Borda escura */
-}
-
-.form-text, .text-muted {
-  color: #adb5bd !important; /* Cor cinza claro para textos auxiliares */
+/* Textos auxiliares */
+.form-text,
+.text-muted {
+  color: #adb5bd !important;
 }
 
 .text-center p {
-  color: #e9ecef !important; /* Cor dos links "Já tem uma conta?" */
+  color: #e9ecef !important;
 }
 
 a {
-  color: #4dabf7 !important; /* Cor dos links */
+  color: var(--primary-color) !important;
 }
 
 a:hover {
-  color: #339af0 !important;
+  color: var(--primary-hover) !important;
 }
 
-/* Correção para os placeholders */
+/* Placeholder */
 ::placeholder {
   color: #6c757d !important;
   opacity: 1;
 }
 
-/* CORREÇÃO DE EMERGÊNCIA */
-.login-container, .cadastro-container, 
-.card-body, .card-header, 
-.form-control, .form-label,
-small, .text-muted {
-  color: #e9ecef !important;
-  border-color: #333 !important;
-}
-
-/* Garante que os placeholders ficarão visíveis */
 .form-control::placeholder {
   color: #6c757d !important;
   opacity: 1;
 }
 
-/* Remove o glow branco do focus */
 .form-control:focus {
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 0.25rem var(--primary-shadow);
 }
